@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ContactoService {
-  private apiUrl = 'http://localhost:3000/api/contactos';
+  private apiUrl = 'https://github.com/NoSoyDonete/Agenda-back';
 
   constructor(private http: HttpClient) {}
 
