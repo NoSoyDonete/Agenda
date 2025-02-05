@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Buscar Contactos</h2>
+    
+    <div class="busqueda-form">
+      <input
+        type="text"
+        [(ngModel)]="terminoBusqueda"
+        (input)="onBuscar($event)"
+        placeholder="Buscar por nombre, teléfono o email..."
+        class="busqueda-input"
+      >
+    </div>
+  
+    <div class="resultados-container" *ngIf="contactos.length > 0">
+      <div class="contacto-item" *ngFor="let contacto of contactos">
+        <div class="contacto-info">
+          <div><strong>Nombre:</strong> {{ contacto.nombre }}</div>
+          <div><strong>Teléfono:</strong> {{ contacto.telefono }}</div>
+          <div><strong>Email:</strong> {{ contacto.email || 'N/A' }}</div>
+        </div>
+        <div class="contacto-acciones">
+          <a [routerLink]="['/editar', contacto.id]" class="btn-edit">Editar</a>
+          <a [routerLink]="['/eliminar', contacto.id]" class="btn-delete">Eliminar</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="no-resultados" *ngIf="terminoBusqueda && contactos.length === 0">
+      No se encontraron contactos
+    </div>
+  
+    <div class="botones">
+      <a routerLink="/" class="btn-back">Volver</a>
+    </div>
+  </div>

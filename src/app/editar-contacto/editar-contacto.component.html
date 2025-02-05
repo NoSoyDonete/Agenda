@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>Editar Contacto</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input 
+        type="text" 
+        id="nombre" 
+        [(ngModel)]="contacto.nombre" 
+        name="nombre" 
+        required
+        #nombre="ngModel"
+        placeholder="Ingresa el nombre">
+      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert alert-danger">
+        El nombre es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input 
+        type="text" 
+        id="telefono" 
+        [(ngModel)]="contacto.telefono" 
+        name="telefono" 
+        required
+        #telefono="ngModel"
+        placeholder="Ingresa el teléfono">
+      <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)" class="alert alert-danger">
+        El teléfono es requerido
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input 
+        type="email" 
+        id="email" 
+        [(ngModel)]="contacto.email" 
+        name="email"
+        placeholder="Ingresa el email (opcional)">
+    </div>
+
+    <div class="button-group">
+      <button 
+        type="submit" 
+        class="btn-submit"
+        [disabled]="!contacto.nombre.trim() || !contacto.telefono.trim()">
+        Guardar Cambios
+      </button>
+      <button type="button" (click)="onCancel()" class="btn-cancel">Cancelar</button>
+    </div>
+  </form>
+</div>
+
