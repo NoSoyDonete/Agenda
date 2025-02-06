@@ -8,7 +8,7 @@ import { BuscarContactosComponent } from './buscar-contactos/buscar-contactos.co
 export const routes: Routes = [
   { 
     path: '', 
-    redirectTo: '/mostrar', 
+    redirectTo: 'mostrar', 
     pathMatch: 'full' 
   },
   { 
@@ -33,11 +33,6 @@ export const routes: Routes = [
   },
   { 
     path: '**', 
-    redirectTo: '/mostrar' 
+    redirectTo: 'mostrar' 
   }
 ];
-
-export const AppRoutingModule = {
-  imports: [routes],
-  exports: [routes]
-};
