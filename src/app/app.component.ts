@@ -13,11 +13,6 @@ import { ContactoService } from './contacto.service';
   selector: 'app-root',
   standalone: true,
   imports: [
-    BuscarContactosComponent,
-    CrearContactoComponent,
-    EditarContactoComponent,
-    EliminarContactoComponent,
-    MostrarContactosComponent,
     CommonModule,
     RouterOutlet
 ],
