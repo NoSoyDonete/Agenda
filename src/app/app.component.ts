@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { SupabaseService } from './supabase.service';
+import { ContactoService } from './contacto.service';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,7 @@ import { RouterOutlet } from '@angular/router';
       <router-outlet></router-outlet>
     </main>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  // providers: [SupabaseService, ContactoService],
 })
 export class AppComponent { }
