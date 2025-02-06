@@ -7,11 +7,7 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
   providedIn: 'root'
 })
 export class ContactoService {
-<<<<<<< HEAD
   private supabase: SupabaseClient;
-=======
-  private apiUrl = 'https://github.com/NoSoyDonete/Agenda-back';
->>>>>>> e44303bf728146a719d4e357e0ea9d48eb16493b
 
   constructor() {
     this.supabase = createClient(
