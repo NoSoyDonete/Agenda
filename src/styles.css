@@ -113,11 +113,9 @@ button:disabled {
   margin-top: 30px;
 }
 
-/* Estilos para el mensaje de confirmación de eliminación */
 p {
   text-align: center;
   font-size: 18px;
   color: #666;
   margin-bottom: 30px;
 }
-
