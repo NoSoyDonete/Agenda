@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { environment } from './environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,8 @@ export class ContactoService {
 
   constructor() {
     this.supabase = createClient(
-      process.env['NEXT_PUBLIC_SUPABASE_URL'] || '',
-      process.env['NEXT_PUBLIC_SUPABASE_ANON_KEY'] || ''
+      environment.supabaseUrl,
+      environment.supabaseAnonKey
     );
   }
 
