@@ -1,16 +1,22 @@
 {
     "version": 2,
-    "routes": [
+    "framework": "angular",
+    "outputDirectory": "dist/agenda-frontend",
+    "rewrites": [
       {
-        "handle": "filesystem"
-      },
+        "source": "/(.*)",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
       {
-        "src": "/assets/(.*)",
-        "dest": "/assets/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
       }
     ]
   }
